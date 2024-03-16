@@ -1,0 +1,127 @@
+$colorMessage: rgb(0, 0, 0);
+@mixin flexVolonter {
+  display: flex;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.imgFacebook {
+  width: 40px;
+}
+.VolonterBox {
+  &__name {
+    font-size: 1.5vw;
+  }
+  &__volunteerTitle {
+    text-align: center;
+    font-size: 2vw;
+    padding: 4vw 0 2vw 0;
+  }
+  &__title {
+    font-size: 2vw;
+  }
+  &__description {
+    font-size: 1.5vw;
+  }
+  &__imgMessage {
+    width: 50px;
+  }
+  &__wrapVolunteer {
+    padding: 2vw 8vw;
+    @include flexVolonter();
+    gap: 8vw;
+  }
+  
+  .VolonterBox__imgMessage {
+    &-imgFacebook {
+      width: 40px;
+    }
+  }
+  &__imgVolunteer {
+    width: 100%;
+    padding: 2vw 0;
+    height: 14em;
+  }
+  &__messageWrap {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__fundraisingWrap {
+    @include flexVolonter();
+    padding: 8vw 4vw;
+    flex-direction: column;
+    gap: 2vw;
+  }
+  &__description {
+    padding: 2vw 4vw;
+  }
+  &__fundraising-btn {
+    font-size: 1.5vw;
+  }
+  &__linkDescription {
+    display: flex;
+
+    flex-direction: row;
+    gap: 4vw;
+  }
+  &__linkDescription > a {
+    color: $colorMessage;
+  }
+  &__VolonterBox {
+    padding: 4vw 8vw;
+    @include flexVolonter();
+  }
+  &__wrapReport {
+    @include flexVolonter();
+    padding: 4vw 0;
+    flex-direction: column;
+  }
+  &__reportImg {
+    padding: 4vw 8vw;
+    gap: 4vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__reportImg > img {
+    width: 100%;
+    max-width: 400px;
+    height: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .VolonterBox {
+    &__volunteerTitle {
+      padding: 10vw 0 0vw 0;
+      font-size: 4vw;
+    }
+    &__wrapVolunteer {
+      padding: 8vw 0;
+      flex-direction: column;
+      gap: 12vw;
+    }
+    &__description {
+      text-align: center;
+      font-size: 2.5vw;
+      padding: 4vw 0;
+    }
+    &__title {
+      font-size: 3vw;
+    }
+    &__name {
+      text-align: center;
+      font-size: 3vw;
+    }
+    &__linkDescription {
+      flex-direction: column;
+    }
+    &__reportImg {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__fundraising-btn {
+      font-size: 2.5vw;
+    }
+  }
+}

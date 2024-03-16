@@ -1,0 +1,50 @@
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.AboutContainer {
+  padding: 4vw 8vw;
+  @include flexRow();
+  gap: 2vw;
+  &__sectionAboutMe {
+    @include flexRow();
+    gap: 4vw;
+    flex-wrap: nowrap;
+  }
+  &__myImg {
+    width: 200px;
+  }
+  &__img {
+    width: 80px;
+    &--faceBook {
+      padding: 1vw;
+      width: 70px;
+    }
+    &--ins {
+      padding: 0.5vw;
+    }
+  }
+  &__title {
+    font-size: 2vw;
+  }
+  &__text {
+    line-height: 2.5vw;
+    font-size: 1.5vw;
+    &--aboutMe {
+      padding: 0 0 2vw 0;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .AboutContainer {
+    padding: 10vw;
+    &__title {
+      font-size: 5vw;
+    }
+    &__text {
+      line-height: 4vw;
+      font-size: 2.5vw;
+    }
+  }
+}
